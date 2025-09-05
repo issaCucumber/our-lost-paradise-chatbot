@@ -7,96 +7,57 @@
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Google reCAPTCHA v3 -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6Lcp974rAAAAAK9t1S8PyhFfXA8O38pOFSr0AEU9" async defer></script>
 </head>
 <body>
+  <!-- Hero Banner -->
+  <header class="banner-elegant">
+    <div class="banner-content">
+      <h1>
+        <span class="title-main">踏入失樂園</span>
+        <span class="title-sub">限時邂逅他們的故事</span>
+      </h1>
+      <p class="banner-subtitle">探索兩位角色的獨特故事，短暫的邂逅，期待你的加入！</p>
+    </div>
+  </header>
 
-<header class="banner-elegant">
-  <div class="banner-content">
-    <h1>
-      <span class="title-main">踏入失樂園</span>
-      <span class="title-sub">限時邂逅他們的故事</span>
-    </h1>
-    <p class="banner-subtitle">探索兩位角色的獨特故事，短暫的邂逅，期待你的加入！</p>
-  </div>
-</header>
+  <!-- Character Cards -->
+  <main>
+    <div class="characters">
+      <!-- Character A Card -->
+      <div class="card" onclick="window.location.href='chat.html?character=Eugene'">
+        <img src="images/AI_image_Eugene.png" alt="Eugene" />
+        <div class="overlay">
+          <h3>Eugene</h3>
+          <p>無畏的夢想者，背負著秘密</p>
+        </div>
+      </div>
 
-<main>
-  <div class="characters">
-    <!-- Character A Card -->
-    <div class="card" onclick="startChat('Eugene')">
-      <img src="images/AI_image_Eugene.png" alt="Eugene" />
-      <div class="overlay">
-        <h3>Eugene</h3>
-        <p>無畏的夢想者，背負著秘密</p>
+      <!-- Character B Card -->
+      <div class="card" onclick="window.location.href='chat.html?character=Nathan'">
+        <img src="images/AI_image_Nathan.png" alt="Nathan" />
+        <div class="overlay">
+          <h3>Nathan</h3>
+          <p>迷失的旅人，追尋真相</p>
+        </div>
       </div>
     </div>
+  </main>
 
-    <!-- Character B Card -->
-    <div class="card" onclick="startChat('Nathan')">
-      <img src="images/AI_image_Nathan.png" alt="Nathan" />
-      <div class="overlay">
-        <h3>Nathan</h3>
-        <p>迷失的旅人，追尋真相</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2025 我們的失樂園 | All Rights Reserved</p>
+      <div class="social-buttons">
+        <a href="https://www.buymeacoffee.com/issacucumb7" target="_blank" class="coffee-btn">
+          <i class="fas fa-mug-hot"></i>
+          Buy me a coffee
+        </a>
+        <a href="https://www.instagram.com/issacucumber" target="_blank" class="instagram-btn">
+          <i class="fab fa-instagram"></i>
+          Share a kind note on IG
+        </a>
       </div>
     </div>
-  </div>
-</main>
-
-<footer class="site-footer">
-  <div class="footer-content">
-    <p>© 2025 我們的失樂園 | All Rights Reserved</p>
-    <div class="social-buttons">
-      <a href="https://www.buymeacoffee.com/issacucumb7" target="_blank" class="coffee-btn">
-        <i class="fas fa-mug-hot"></i>
-        Buy me a coffee
-      </a>
-      <a href="https://www.instagram.com/issacucumber" target="_blank" class="instagram-btn">
-        <i class="fab fa-instagram"></i>
-        Share a kind message on IG
-      </a>
-    </div>
-  </div>
-</footer>
-
-<!-- Disclaimer & reCAPTCHA Script -->
-<script>
-function startChat(characterName) {
-  // 1. Show disclaimer (English + Chinese)
-  const disclaimer = 
-`Before starting a conversation with ${characterName}, please note:
-
-1. The chat is AI-powered. Your messages are used by the AI to generate responses. We do not collect personal information, and your conversation remains private.
-2. Access is completely free, but limited in time and tokens. Once the allocation runs out, the chat will end and no longer be available.
-
-開始與 ${characterName} 對話前，請注意：
-
-1. 此對話由 AI 支援，您的訊息將用於生成 AI 回覆。我們不會收集任何個人資料，您的對話將保持私密。
-2. 本服務完全免費，但有時間及次數限制。一旦使用額度耗盡，對話將結束並無法再使用。`;
-
-  if (confirm(disclaimer)) {
-    // 2. Run reCAPTCHA v3
-    grecaptcha.ready(function() {
-      grecaptcha.execute('6Lcp974rAAAAAK9t1S8PyhFfXA8O38pOFSr0AEU9', {action: 'start_chat'}).then(function(token) {
-        // TODO: send the token to your server for verification
-        // Example:
-        // fetch('/verify-recaptcha', {
-        //   method: 'POST',
-        //   headers: { 'Content-Type': 'application/json' },
-        //   body: JSON.stringify({ token })
-        // }).then(res => res.json()).then(data => {
-        //   if (data.success) { startConversation(characterName); }
-        //   else { alert('Verification failed, please try again.'); }
-        // });
-
-        // For now, just show alert
-        alert(`You are verified! Starting conversation with ${characterName}...`);
-      });
-    });
-  }
-}
-</script>
-
+  </footer>
 </body>
 </html>

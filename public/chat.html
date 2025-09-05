@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>與角色對話</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+
+  <!-- Disclaimer Modal -->
+  <div id="disclaimer-modal" class="modal">
+    <div class="modal-content">
+      <h2>⚠️ 注意事項 / Disclaimer</h2>
+      <div class="modal-body">
+        <p>
+          1. 本站對話由 <strong>AI</strong> 提供；不收集個人資料，內容私密。<br>
+          Conversations are powered by <strong>AI</strong>. They are private and not stored by this site.
+        </p>
+        <p>
+          2. 本服務 <strong>免費、限時</strong> 且受代幣/次數限制。額度耗盡後，對話將結束。<br>
+          This service is <strong>free, time-limited</strong>, and token-limited. When resources run out, chat ends.
+        </p>
+      </div>
+      <div class="modal-actions">
+        <button id="decline-btn" class="btn btn-decline">返回首頁</button>
+        <button id="accept-btn" class="btn btn-accept">我了解，開始聊天 / Start Chat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Container -->
+  <div class="chat-container">
+    <header class="chat-header">
+      <button id="back-btn" class="back-btn">&#8592;</button>
+      <div class="chat-title">
+        <img id="character-pic" src="images/AI_image_placeholder.png" alt="Character" class="character-pic">
+        <span id="chat-character">角色對話</span>
+      </div>
+    </header>
+
+    <!-- Rules box -->
+    <div id="rules-box" class="rules-box"></div>
+
+    <!-- Chat messages -->
+    <div class="chat-messages" id="chat-messages"></div>
+
+    <!-- Input -->
+    <form class="chat-input" id="chat-form" autocomplete="off">
+      <input type="text" id="chat-text" placeholder="輸入訊息..." aria-label="輸入訊息">
+      <button type="submit" id="send-btn">送出</button>
+    </form>
+  </div>
+
+  <script src="js/chat.js"></script>
+</body>
+</html>
