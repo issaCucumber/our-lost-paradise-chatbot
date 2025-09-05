@@ -1,0 +1,278 @@
+/* ===== Global Styles ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: dreamGradient 20s ease infinite;
+}
+
+@keyframes dreamGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Elegant Banner ===== */
+.banner-elegant {
+  width: 100%;
+  padding: 80px 20px 60px;
+  text-align: center;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: dreamGradient 20s ease infinite;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.banner-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner h1 {
+  margin: 0 0 20px;
+  line-height: 1.2;
+  display: inline-block;
+}
+
+.banner h1 .title-main {
+  display: block;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 4rem;
+  font-weight: 700; /* Bold */
+  color: #f5e6ff;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.1);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.banner h1 .title-sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500; /* Medium */
+  color: #fff;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.2);
+  margin-top: 10px;
+}
+
+.banner-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-top: 10px;
+}
+
+/* Decorative shimmer */
+.banner-elegant::before {
+  content: '';
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(270deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  pointer-events: none;
+  animation: shimmer 15s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* ===== Character Cards ===== */
+.characters {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+/* Make cards feel clickable */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  background: #fff;
+  cursor: pointer; /* shows pointer on hover */
+}
+
+/* Slight lift and border on hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.25);
+  border: 2px solid #a1c4fd; /* subtle highlight */
+}
+
+/* Overlay fade effect */
+.card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.card:hover .overlay {
+  background: rgba(0,0,0,0.75);
+}
+
+/* Optional: small icon to show "click to chat" */
+.card .overlay::after {
+  content: "💬 Click to Chat";
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+/* Desktop / Web - full image height */
+.card img {
+  width: 100%;
+  height: auto;         /* maintain natural aspect ratio */
+  object-fit: cover;
+  object-position: top; /* top alignment */
+}
+
+.card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.card:hover .overlay {
+  background: rgba(0,0,0,0.8);
+}
+
+.overlay h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.overlay p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: linear-gradient(120deg, #f7f4f9, #eae6f5);
+  color: #4b3f6b;
+  padding: 30px 20px;
+  text-align: center;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.site-footer p {
+  margin: 5px 0 15px;
+  font-size: 0.95rem;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Buy Me a Coffee button */
+.coffee-btn {
+  background-color: #FFDD00;
+  color: #3b2f2f;
+}
+
+.coffee-btn:hover {
+  background-color: #e6c700;
+  transform: translateY(-2px);
+}
+
+/* Instagram button */
+.instagram-btn {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.instagram-btn:hover {
+  transform: translateY(-2px);
+}
+
+.social-buttons a img {
+  height: 20px;
+  width: auto;
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 768px) {
+  /* Banner adjustments */
+  .banner-elegant {
+    padding: 60px 20px 50px;
+  }
+
+  .banner-content {
+    text-align: center;
+  }
+
+  .banner h1 .title-main {
+    font-size: 2.5rem;
+  }
+
+  .banner h1 .title-sub {
+    font-size: 1.5rem;
+  }
+
+  .banner-subtitle {
+    font-size: 1rem;
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+
+  /* Card image shorter */
+  .card img {
+    height: 270px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  /* Footer buttons stack nicely */
+  .social-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
