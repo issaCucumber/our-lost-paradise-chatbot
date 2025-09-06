@@ -15,7 +15,7 @@ const character = urlParams.get("character") || "角色";
 chatHeader.textContent = character;
 
 // Set character profile picture
-characterPic.src = `images/AI_image_${character}.png`;
+characterPic.src = `images/${character}_profile_pic.png`;
 
 // Character-specific story-like rules
 const rulesData = {
